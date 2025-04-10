@@ -1,4 +1,5 @@
 import '../sass/main.scss';
+import { Footer } from './_components/Footer';
 import { Header } from './_components/Header';
 
 export const metadata = {
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
 			<body>
 				<Header />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
