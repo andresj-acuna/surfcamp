@@ -1,5 +1,12 @@
+import { HeroSection } from './_components/HeroSection';
+
 const Home = () => {
-	return <main></main>;
+	const heroHeadline = 'barrel. your. happiness.';
+	return (
+		<main>
+			<HeroSection headline={heroHeadline} />
+		</main>
+	);
 };
 
 export default Home;
