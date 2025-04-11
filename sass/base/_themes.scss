@@ -1,0 +1,28 @@
+$hero-themes: (
+	turquoise: $turquoise,
+	orange: $orange,
+);
+
+@each $name, $color in $hero-themes {
+	.hero--#{$name} {
+		.btn {
+			background: $color;
+			color: #fff;
+		}
+
+		.hero__headline {
+			color: if($name == orange, #fff, initial);
+		}
+
+		.hero__logo {
+			@if $name == orange {
+				filter: invert(51%)
+					sepia(97%)
+					saturate(386%)
+					hue-rotate(351deg)
+					brightness(91%)
+					contrast(84%);
+			}
+		}
+	}
+}
