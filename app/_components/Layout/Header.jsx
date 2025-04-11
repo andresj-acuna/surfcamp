@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const Header = () => {
@@ -18,7 +19,14 @@ export const Header = () => {
 
 	return (
 		<header className='header'>
-			<img className='header__logo' src='/assets/logo.svg' alt='' />
+			<Image
+				className='header__logo'
+				src='/assets/logo.svg'
+				alt='Surf logo'
+				width={50}
+				height={77}
+				priority
+			/>
 			<ul className='header__nav'>
 				{navItems.map((item) => (
 					<li key={item.slug}>

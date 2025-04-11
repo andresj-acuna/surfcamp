@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const Footer = () => {
@@ -38,7 +39,13 @@ export const Footer = () => {
 	return (
 		<footer className='footer'>
 			<div className='footer__wrapper'>
-				<img className='footer__logo' src='/assets/logo.svg' alt='' />
+				<Image
+					className='footer__logo'
+					src='/assets/logo.svg'
+					alt='Surf footer logo'
+					width={80}
+					height={123}
+				/>
 				<ul className='footer__nav'>
 					{footerItems.map((item) => (
 						<li key={item.slug}>
