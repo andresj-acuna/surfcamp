@@ -8,12 +8,17 @@ export const HeroSection = ({ imgSrc, headline, theme = 'turquoise' }) => {
 				<Image
 					src={imgSrc || '/assets/hero-image.png'}
 					alt='Surf hero background'
-					fill
+					width={1440}
+					height={830}
 					priority
 				/>
 			</div>
 			<div className='hero__headline'>
-				<h1>{headline}</h1>
+				<h1>
+					{headline.map((word, i) => (
+						<span key={i}>{word}</span>
+					))}
+				</h1>
 			</div>
 			<button className='btn btn--medium'>
 				<Link href='/events'>Book Now</Link>
