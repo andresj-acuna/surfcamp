@@ -1,5 +1,5 @@
-@import 'base/mixins';
 @import 'base/variables';
+@import 'base/mixins';
 @import 'base/typography';
 @import 'base/base';
 @import 'base/themes';
@@ -8,7 +8,7 @@
 @import 'components/button';
 @import 'components/footer';
 @import 'components/hero-section';
-// @import "components/info-block";
+@import 'components/info-block';
 // @import "components/input";
 // @import "components/featured-items";
 // @import "components/blog-preview";

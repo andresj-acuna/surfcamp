@@ -4,12 +4,25 @@ $hero-themes: (
 );
 
 @each $name, $color in $hero-themes {
-	.hero--#{$name} {
-		.btn {
-			background: $color;
-			color: #fff;
+	.hero--#{$name},
+	.header--#{$name} {
+		.header__logo {
+			@if $name == orange {
+				filter: invert(81%)
+					sepia(53%)
+					saturate(0%)
+					hue-rotate(226deg)
+					brightness(114%)
+					contrast(100%);
+			}
 		}
 
+		.header__nav li a {
+			color: if($name == orange, #fff, initial);
+		}
+	}
+
+	.hero--#{$name} {
 		.hero__headline {
 			color: if($name == orange, #fff, initial);
 		}
@@ -23,6 +36,11 @@ $hero-themes: (
 					brightness(91%)
 					contrast(84%);
 			}
+		}
+
+		.btn {
+			background: $color;
+			color: #fff;
 		}
 	}
 }

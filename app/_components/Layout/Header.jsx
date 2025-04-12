@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const Header = () => {
+export const Header = ({ theme = 'turquoise' }) => {
 	const navItems = [
 		{
 			display: 'the camp.',
@@ -18,7 +18,7 @@ export const Header = () => {
 	];
 
 	return (
-		<header className='header'>
+		<header className={`header header--${theme}`}>
 			<Image
 				className='header__logo'
 				src='/assets/logo.svg'
