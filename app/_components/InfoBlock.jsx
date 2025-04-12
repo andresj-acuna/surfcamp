@@ -5,14 +5,15 @@ export const InfoBlock = ({ data, button }) => {
 	const { text: btnText, color, href } = button;
 	return (
 		<section className={`info ${reversed ? 'info--reversed' : ''}`}>
-			<Image
-				className='info__image'
-				src='/assets/info-block-image.png'
-				alt='Surf Info'
-				width={683}
-				height={658}
-			/>
-
+			<div className='info__image-wrapper'>
+				<Image
+					className='info__image'
+					src='/assets/info-block-image.png'
+					alt='Surf Info'
+					width={683}
+					height={658}
+				/>
+			</div>
 			<div className='info__text'>
 				<h2 className='info__headline'>{headline}</h2>
 				<p className='copy'>{text}</p>
