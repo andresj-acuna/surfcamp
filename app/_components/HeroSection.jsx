@@ -6,7 +6,7 @@ export const HeroSection = ({ imgSrc, headline, theme = 'turquoise' }) => {
 		<section className={`hero hero--${theme}`}>
 			<div className='hero__background'>
 				<Image
-					src={imgSrc || '/assets/hero-image.png'}
+					src={imgSrc || '/assets/hero-home.png'}
 					alt='Surf hero background'
 					width={1440}
 					height={830}

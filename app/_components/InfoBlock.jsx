@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
-export const InfoBlock = ({ data, button }) => {
-	const { headline, text, reversed } = data;
+export const InfoBlock = ({ data }) => {
+	const { headline, text, reversed, button } = data;
 	const { text: btnText, color, href } = button;
 	return (
 		<section className={`info ${reversed ? 'info--reversed' : ''}`}>
@@ -17,7 +18,9 @@ export const InfoBlock = ({ data, button }) => {
 			<div className='info__text'>
 				<h2 className='info__headline'>{headline}</h2>
 				<p className='copy'>{text}</p>
-				<button className={`btn btn--medium btn--${color}`}>{btnText}</button>
+				<button className={`btn btn--medium btn--${color}`}>
+					<Link href={href}>{btnText}</Link>
+				</button>
 			</div>
 		</section>
 	);
