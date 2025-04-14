@@ -9,14 +9,48 @@
 	padding: 2.4rem 4.8rem;
 	z-index: 10;
 	&__nav {
-		display: flex;
-		gap: 4.6rem;
+		@media (max-width: 768px) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-color: $light-beige;
+			transform: translateX(100%);
+			transition: transform 0.3s ease;
 
-		& li {
-			list-style: none;
-			& a {
-				font-size: 3rem;
+			&--open {
+				transform: translateX(0);
 			}
+		}
+		&-list {
+			display: flex;
+			gap: 4.6rem;
+			align-items: center;
+			justify-content: center;
+			font-size: 3rem;
+			@media (max-width: 768px) {
+				flex-direction: column;
+				height: 100%;
+			}
+		}
+	}
+
+	&__menu-toggle {
+		display: none;
+		order: 3;
+		background: none;
+		border: none;
+		cursor: pointer;
+		z-index: 101;
+
+		@media (max-width: 768px) {
+			display: block;
+		}
+	}
+	.btn {
+		@media (max-width: 768px) {
+			order: 2;
 		}
 	}
 }

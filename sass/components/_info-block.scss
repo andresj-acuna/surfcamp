@@ -5,21 +5,60 @@
 	margin-top: 8rem;
 	margin-bottom: 10.9rem;
 	padding-right: 4.8rem;
+	@media (max-width: 1024px) {
+		padding-right: 2.4rem;
+		margin-top: 6rem;
+		margin-bottom: 8rem;
+	}
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+		padding-left: 1.6rem;
+		padding-right: 1.6rem;
+		margin-top: 4rem;
+		margin-bottom: 6rem;
+		gap: 3rem;
+	}
 
 	&--reversed {
 		flex-direction: row-reverse;
 		padding-left: 4.8rem;
 		padding-right: 0;
+		@media (max-width: 1024px) {
+			padding-left: 2.4rem;
+		}
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+			padding-left: 1.6rem;
+			padding-right: 1.6rem;
+		}
 
 		& .info__image {
 			border-radius: 329px 0 0 329px;
+			@media (max-width: 768px) {
+				border-radius: 32px;
+			}
 		}
 	}
 
 	&__image-wrapper,
 	&__text {
 		flex: 1;
-		// width: 48%;
+		max-width: 100%;
+
+		@media (min-width: 769px) {
+			max-width: 50%;
+		}
+	}
+
+	&__image-wrapper {
+		position: relative;
+		height: auto;
+
+		@media (max-width: 768px) {
+			aspect-ratio: 1/1;
+		}
 	}
 
 	&__image {
@@ -27,17 +66,38 @@
 		height: 100%;
 		object-fit: cover;
 		border-radius: 0 329px 329px 0;
+
+		@media (max-width: 1440px) {
+			border-radius: 0 200px 200px 0;
+		}
+
+		@media (max-width: 768px) {
+			border-radius: 32px;
+		}
 	}
 
 	&__text {
 		margin-top: 4rem;
+
+		@media (max-width: 768px) {
+			margin-top: 2rem;
+
+			.btn {
+				display: inline-block;
+				margin-top: 4rem;
+				margin-left: auto;
+				margin-right: auto;
+				// Esto hace que se centre sin cambiar el layout del texto
+				display: block;
+				width: fit-content;
+			}
+		}
 	}
 
-	&__heading {
+	&__headline {
 		margin-bottom: 3rem;
-	}
-
-	.btn {
-		margin-top: 3rem;
+		@media (max-width: 768px) {
+			line-height: 8rem;
+		}
 	}
 }

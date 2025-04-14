@@ -22,9 +22,11 @@ export const InfoBlock = ({ data }) => {
 				{/* <ReactMarkdown>{'**Bold** _Italic_ `Code`'}</ReactMarkdown> */}
 
 				{button && (
-					<button className={`btn btn--medium btn--${button.color}`}>
-						<Link href={button.href}>{button.text}</Link>
-					</button>
+					<Link
+						className={`btn btn--medium btn--${button.color}`}
+						href={button.href}>
+						{button.text}
+					</Link>
 				)}
 			</div>
 		</section>

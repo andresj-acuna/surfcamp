@@ -7,7 +7,7 @@ export const HeroSection = ({ imgSrc, headline, theme = 'turquoise' }) => {
 			<div className='hero__background'>
 				<Image
 					src={imgSrc || '/assets/hero-home.png'}
-					alt='Surf hero background'
+					alt='Surfer riding a wave'
 					width={1440}
 					height={830}
 					priority
