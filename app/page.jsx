@@ -15,7 +15,12 @@ const Home = async () => {
 		<>
 			<Header theme='turquoise' />
 			<main>
-				<HeroSection headline={heroHeadline} theme='turquoise' />
+				<HeroSection
+					headline={heroHeadline}
+					theme='turquoise'
+					mobileImgSrc={'/assets/hero-home-mobile.webp'}
+					heroAlt={'Surfer riding a wave'}
+				/>
 				{infoBlocks.map((block) => (
 					<InfoBlock key={block.id} data={block} />
 				))}

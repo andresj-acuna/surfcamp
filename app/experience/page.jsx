@@ -17,6 +17,8 @@ const Experience = async () => {
 			<main>
 				<HeroSection
 					imgSrc={'/assets/hero-experience.png'}
+					mobileImgSrc={'/assets/hero-experience-mobile.webp'}
+					heroAlt={'Luxury oceanview glamping'}
 					headline={heroHeadline}
 					theme='orange'
 				/>

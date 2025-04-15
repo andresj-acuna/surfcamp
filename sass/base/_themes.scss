@@ -6,6 +6,17 @@ $hero-themes: (
 @each $name, $color in $hero-themes {
 	.hero--#{$name},
 	.header--#{$name} {
+		.header__menu-toggle .lucide-menu {
+			@if $name == orange {
+				filter: invert(81%)
+					sepia(53%)
+					saturate(0%)
+					hue-rotate(226deg)
+					brightness(114%)
+					contrast(100%);
+			}
+		}
+
 		.header__nav.header__nav--open li a {
 			color: if($name == orange, #000, initial);
 		}
