@@ -11,6 +11,7 @@ export const HeroSection = ({ imgSrc, headline, theme = 'turquoise' }) => {
 					width={1440}
 					height={830}
 					priority
+					sizes='(max-width: 768px) 100vw, 1440px'
 				/>
 			</div>
 			<div className='hero__headline'>
@@ -20,9 +21,9 @@ export const HeroSection = ({ imgSrc, headline, theme = 'turquoise' }) => {
 					))}
 				</h1>
 			</div>
-			<button className='btn btn--medium'>
-				<Link href='/events'>Book Now</Link>
-			</button>
+			<Link href='/events' className='btn btn--medium'>
+				Book Now
+			</Link>
 			<Image
 				className='hero__logo'
 				src='/assets/logo.svg'

@@ -14,13 +14,16 @@ export const InfoBlock = ({ data }) => {
 					alt='Surf Info'
 					width={683}
 					height={658}
+					sizes='(max-width: 768px) 100vw, 50vw'
+					quality={85}
+					priority={true}
 				/>
 			</div>
 			<div className='info__text'>
 				<h2 className='info__headline'>{headline}</h2>
-				<ReactMarkdown className='copy'>{text}</ReactMarkdown>
-				{/* <ReactMarkdown>{'**Bold** _Italic_ `Code`'}</ReactMarkdown> */}
-
+				<ReactMarkdown className='copy line-break'>
+					{text.replace(/\n/gi, '&nbsp; \n')}
+				</ReactMarkdown>
 				{button && (
 					<Link
 						className={`btn btn--medium btn--${button.color}`}

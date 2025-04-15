@@ -6,6 +6,10 @@ $hero-themes: (
 @each $name, $color in $hero-themes {
 	.hero--#{$name},
 	.header--#{$name} {
+		.header__nav.header__nav--open li a {
+			color: if($name == orange, #000, initial);
+		}
+
 		.header__logo {
 			@if $name == orange {
 				filter: invert(81%)
@@ -19,6 +23,9 @@ $hero-themes: (
 
 		.header__nav li a {
 			color: if($name == orange, #fff, initial);
+		}
+		.header__nav--open .header__nav li a {
+			color: if($name == orange, #000, initial);
 		}
 	}
 

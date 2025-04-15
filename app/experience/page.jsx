@@ -1,19 +1,15 @@
 import { Header } from './../_components/Layout/Header';
 import { HeroSection } from './../_components/HeroSection';
 import { InfoBlock } from './../_components/InfoBlock';
+import { fetchDataFromStrapi, normalizeInfoBlock } from '@/utils/strapi.utils';
 
-const Home = () => {
+const Experience = async () => {
+	const data = await fetchDataFromStrapi('infoblocks-experience?populate=deep');
+
+	const infoBlocksRaw = data.attributes.info_blocks.data;
+	const infoBlocks = infoBlocksRaw.map(normalizeInfoBlock);
+
 	const heroHeadline = ['barrel.', 'your.', 'happiness.'];
-	const infoBlockData = {
-		headline: 'the experience.',
-		text: `At Sam’s Surfcamp, we invite you to embark on an unforgettable surfing adventure...`,
-		reversed: false,
-		button: {
-			text: 'Book now',
-			color: 'turquoise',
-			href: '/events',
-		},
-	};
 
 	return (
 		<>
@@ -24,12 +20,12 @@ const Home = () => {
 					headline={heroHeadline}
 					theme='orange'
 				/>
-				<InfoBlock data={infoBlockData} />
-				<InfoBlock data={{ ...infoBlockData, reversed: true }} />
-				<InfoBlock data={infoBlockData} />
+				{infoBlocks.map((block) => (
+					<InfoBlock key={block.id} data={block} />
+				))}
 			</main>
 		</>
 	);
 };
 
-export default Home;
+export default Experience;

@@ -32,7 +32,7 @@ export const Header = ({ theme = 'turquoise' }) => {
 			<Image
 				className='header__logo'
 				src='/assets/logo.svg'
-				alt='Surf logo'
+				alt='Barrel Surf'
 				width={50}
 				height={77}
 				priority
